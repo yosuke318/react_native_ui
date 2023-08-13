@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: front
+    tty: true
+    volumes:
+      - ./storybook:/storybook
+    ports:
+      - "5173:5173"
+      - "6006:6006"
