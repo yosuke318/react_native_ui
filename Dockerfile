@@ -1,5 +1,7 @@
-FROM node:19.8.1
+FROM node:16-alpine
 
-RUN npm install -g npm@latest && npx react-native init storybook
+WORKDIR /usr/src/app/
 
-WORKDIR storybook
+RUN apk update && apk add bash
+
+RUN yarn global add expo-cli
