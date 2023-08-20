@@ -5,8 +5,7 @@ import {Calendar} from "react-native-calendars";
 export default function App() {
     return (
         <View style={styles.container}>
-
-
+            <SafeAreaView>
                 <Calendar
                     style={{
                         height: '100%'
@@ -32,6 +31,7 @@ export default function App() {
                         }
                     }}
                 />
+            </SafeAreaView>
         </View>
     );
 }
