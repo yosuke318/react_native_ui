@@ -1,4 +1,5 @@
 import CalendarComponent from "./components/CalendarComponent";
+import DialogComponent from "./components/DialogComponent";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
@@ -13,6 +14,7 @@ export default function App() {
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={HomeScreen}/>
                 <Stack.Screen name="Calendar" component={CalendarComponent}/>
+                <Stack.Screen name="Dialog" component={DialogComponent}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
@@ -23,6 +25,7 @@ export const HomeScreen = ({navigation}) => {
         <View>
             {/* ボタンを押して画面遷移 */}
             <Button title="カレンダー" onPress={() => navigation.navigate('Calendar')} />
+            <Button title="ダイアログ" onPress={() => navigation.navigate('Dialog')} />
         </View>
     );
 }
