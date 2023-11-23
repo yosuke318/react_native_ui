@@ -8,12 +8,12 @@ function DialogComponent() {
 
         <View>
             {/* ダイアログを表示するボタン */}
-            <Button title="Show Dialog" onPress={() => setVisible(true)} />
+            <Button title="ダイアログ確認ボタン" onPress={() => setVisible(true)} />
 
             {/* ダイアログ */}
             <Dialog
                 visible={visible}
-                title="Other Component Dialog"
+                title="ダイアログです！"
                 onTouchOutside={() => setVisible(false)}
             >
                 {/* ダイアログ内の内容 */}
