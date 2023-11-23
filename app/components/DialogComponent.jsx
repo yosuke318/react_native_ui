@@ -1,20 +1,26 @@
-import {SafeAreaView, View} from "react-native";
-import React from 'react';
+import {Button, View} from "react-native";
+import React, {useState} from 'react';
 import {Dialog} from "react-native-simple-dialogs";
 
 function DialogComponent() {
+    const [visible, setVisible] = useState(false);
     return (
 
         <View>
-                <Dialog.Container>
-                    <Dialog.Title>Account delete</Dialog.Title>
-                    <Dialog.Description>
-                        Do you want to delete this account? You cannot undo this action.
-                    </Dialog.Description>
-                    <Dialog.Button label="cancel"/>
-                    <Dialog.Button label="Delete"/>
-                </Dialog.Container>
+            {/* ダイアログを表示するボタン */}
+            <Button title="Show Dialog" onPress={() => setVisible(true)} />
 
+            {/* ダイアログ */}
+            <Dialog
+                visible={visible}
+                title="Other Component Dialog"
+                onTouchOutside={() => setVisible(false)}
+            >
+                {/* ダイアログ内の内容 */}
+                <View>
+                    {/* ダイアログの中身 */}
+                </View>
+            </Dialog>
         </View>
     );
 }
