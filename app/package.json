@@ -10,6 +10,11 @@
     "tunnel": "expo start --tunnel",
     "test": "jest"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "@babel/preset-env"
+    }
+  },
   "dependencies": {
     "@expo/ngrok": "^4.1.0",
     "@expo/webpack-config": "^18.1.2",
@@ -17,15 +22,18 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@react-navigation/stack": "^6.3.20",
+    "@testing-library/react-native": "^12.4.0",
     "expo": "^48.0.17",
     "expo-status-bar": "~1.4.4",
+    "jest-expo": "^49.0.0",
     "native-base": "^3.4.28",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "0.71.14",
     "react-native-calendars": "1.1284.0",
     "react-native-simple-dialogs": "2.0.1",
-    "react-native-web": "~0.18.10"
+    "react-native-web": "~0.18.10",
+    "react-test-renderer": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
