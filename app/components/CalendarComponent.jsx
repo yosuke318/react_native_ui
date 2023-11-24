@@ -40,7 +40,7 @@ function CalendarComponent() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#00F',
+        backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center',
     },
