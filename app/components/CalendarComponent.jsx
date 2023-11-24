@@ -9,7 +9,7 @@ function CalendarComponent() {
             <SafeAreaView>
                 <Calendar
                     style={{
-                        height: '100%'
+                        height: '80%'
                     }}
                     theme={{
                         'stylesheet.calendar.main': {
