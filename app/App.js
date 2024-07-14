@@ -1,46 +1,34 @@
-import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
-import {Calendar} from "react-native-calendars";
+import CalendarComponent from "./components/CalendarComponent";
+import DialogComponent from "./components/DialogComponent";
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import React from 'react';
+import {View, Button} from 'react-native';
+import TodoList from "./components/TodoList";
+
+
+const Stack = createStackNavigator();
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <SafeAreaView>
-                <Calendar
-                    style={{
-                        height: '100%'
-                    }}
-                    theme={{
-                        'stylesheet.calendar.main': {
-                            monthView: {
-                                flex: 1,
-                                height: '100%',
-                                justifyContent: 'space-around'
-                            },
-                            week: {
-                                flex: 1,
-                                marginVertical: 0,
-                                flexDirection: 'row',
-                                justifyContent: 'space-around'
-                            },
-                            dayContainer: {
-                                borderColor: '#f5f5f5',
-                                borderWidth: 1,
-                                flex: 1,
-                            },
-                        }
-                    }}
-                />
-            </SafeAreaView>
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen}/>
+                <Stack.Screen name="Calendar" component={CalendarComponent}/>
+                <Stack.Screen name="Dialog" component={DialogComponent}/>
+                <Stack.Screen name="TodoList" component={TodoList}/>
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+export const HomeScreen = ({navigation}) => {
+    return (
+        <View>
+            {/* ボタンを押して画面遷移 */}
+            <Button title="カレンダー" onPress={() => navigation.navigate('Calendar')} />
+            <Button title="ダイアログ" onPress={() => navigation.navigate('Dialog')} />
+            <Button title="TodoList" onPress={() => navigation.navigate('TodoList')} />
+        </View>
+    );
+}
