@@ -1,5 +1,6 @@
 # react_native_ui
-management native UI
+
+React Nativeのコンポーネント
 
 
 1. docker compose up
@@ -9,4 +10,3 @@ management native UI
 - スマホから接続する場合:  ```npx expo start --tunenl```
 
 > https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/
-
