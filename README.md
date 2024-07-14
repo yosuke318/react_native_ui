@@ -1,2 +1,2 @@
 # react_native_ui
-management native UI
+React Native　をスマホ上で開発
