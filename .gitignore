@@ -1,11 +1,11 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
-node_modules/
+app/node_modules/
 package-lock.json
 
 # Expo
-.expo/
+**/.expo/web
 dist/
 web-build/
 
@@ -16,7 +16,6 @@ web-build/
 *.p12
 *.key
 *.mobileprovision
-yarn.lock
 
 # Metro
 .metro-health-check*
@@ -36,6 +35,4 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-../.idea
-
-assets
+**/.idea

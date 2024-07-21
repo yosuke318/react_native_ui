@@ -7,7 +7,7 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "19000:19000"
-      - "19001:19001"
-      - "19002:19002"
-      - "19006:19006"
+      - "8081:8081"
+    environment:
+      - REACT_NATIVE_PACKAGER_HOSTNAME=${LOCAL_IP_ADDR}
+      - EXPO_DEBUG=true
