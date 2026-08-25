@@ -1,4 +1,4 @@
-const shoppingList = [
+const shoppingList: string[] = [
     'diapers',
     'kleenex',
     'trash bags',
@@ -10,3 +10,5 @@ test('the shopping list has milk on it', () => {
     expect(shoppingList).toContain('milk');
     expect(new Set(shoppingList)).toContain('milk');
 });
+
+export {};

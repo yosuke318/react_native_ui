@@ -1,4 +1,4 @@
-function fetchData() {
+function fetchData(): Promise<string> {
     // ここでは非同期処理としてPromiseを使用します
     return new Promise((resolve, reject) => {
         // ここでデータを取得する偽の非同期処理を行います
@@ -15,3 +15,4 @@ test('the data is peanut butter', () => {
     });
 });
 
+export {};

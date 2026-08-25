@@ -1,6 +1,6 @@
-// fetchData.js
+// fetchData.ts
 
-async function fetchData() {
+async function fetchData(): Promise<string> {
     try {
         // ここでデータを非同期に取得する処理を模倣します
         const response = await fetch('peanut butter'); // データの取得は非同期に行われると仮定します
@@ -26,3 +26,5 @@ test('the fetch fails with an error', async () => {
         expect(e).toMatch('error');
     }
 });
+
+export {};

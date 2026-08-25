@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {Dialog} from "react-native-simple-dialogs";
 
 function DialogComponent() {
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState<boolean>(false);
     return (
 
         <View>
