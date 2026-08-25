@@ -97,7 +97,7 @@ Expo (SDK 51) + React Native + TypeScript の学習用アプリです。
 - `app/jest/` のテストは Jest の挙動を確認するための学習用で、**意図的に失敗するケースが含まれます**
   （`sum(1, 4) === 3`、`/^you are using the wrong JDK$/`、ループ内で `a + b === 10` になるケースなど）。
   `yarn test` は現状 9 件中 6 件が失敗します。
-- `jest/dialogcomponent.test.tsx` は `getByText('Show Dialog')` を探しますが、実際のボタン文言は
+- `app/jest/dialogcomponent.test.tsx` は `getByText('Show Dialog')` を探しますが、実際のボタン文言は
   「ダイアログ確認ボタン」のため失敗します。
-- `components/TodoList.tsx` の `toast.show()` に渡している `status` は NativeBase v2 由来の
+- `app/components/TodoList.tsx` の `toast.show()` に渡している `status` は NativeBase v2 由来の
   プロパティで、v3 では型に存在しません。実行時の挙動を変えないためキャストして残しています。

@@ -1,10 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from "react-native";
 import {Calendar} from "react-native-calendars";
-import {Theme} from "react-native-calendars/src/types";
+import type {CalendarProps} from "react-native-calendars";
+
+type CalendarTheme = NonNullable<CalendarProps['theme']>;
 
 // react-native-calendars は実行時に 'stylesheet.calendar.main' のようなフラットキーを参照するが、
-// Theme 型は入れ子の stylesheet しか宣言していないためキャストして渡す
+// Theme 型（CalendarProps['theme']）は入れ子の stylesheet しか宣言していないためキャストして渡す
 const calendarTheme = {
     'stylesheet.calendar.main': {
         monthView: {
@@ -24,7 +26,7 @@ const calendarTheme = {
             flex: 1,
         },
     }
-} as Theme;
+} as CalendarTheme;
 
 function CalendarComponent() {
     return (
