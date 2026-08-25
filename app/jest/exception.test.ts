@@ -1,4 +1,4 @@
-function compileAndroidCode() {
+function compileAndroidCode(): never {
     throw new Error('you are using the wrong JDK!');
 }
 
@@ -14,3 +14,5 @@ test('compiling android goes as expected', () => {
     expect(() => compileAndroidCode()).toThrow(/^you are using the wrong JDK$/); // Test fails
     expect(() => compileAndroidCode()).toThrow(/^you are using the wrong JDK!$/); // Test pass
 });
+
+export {};

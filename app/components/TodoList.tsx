@@ -13,10 +13,16 @@ import {
     useToast,
     NativeBaseProvider
 } from "native-base";
+import type {IToastProps} from "native-base";
 import {Feather, Entypo} from "@expo/vector-icons";
 
+type TodoItem = {
+    title: string;
+    isCompleted: boolean;
+};
+
 const TodoList = () => {
-    const instState = [{
+    const instState: TodoItem[] = [{
         title: "Code",
         isCompleted: true
     }, {
@@ -29,16 +35,18 @@ const TodoList = () => {
         title: "Write an article",
         isCompleted: false
     }];
-    const [list, setList] = React.useState(instState);
-    const [inputValue, setInputValue] = React.useState("");
+    const [list, setList] = React.useState<TodoItem[]>(instState);
+    const [inputValue, setInputValue] = React.useState<string>("");
     const toast = useToast();
 
-    const addItem = title => {
+    const addItem = (title: string) => {
         if (title === "") {
+            // status は NativeBase v2 由来のプロパティで v3 の IToastProps には存在しないが、
+            // 実行時の引数を変えないためキャストして元のまま渡している
             toast.show({
                 title: "Please Enter Text",
                 status: "warning"
-            });
+            } as IToastProps);
             return;
         }
 
@@ -50,14 +58,14 @@ const TodoList = () => {
         });
     };
 
-    const handleDelete = index => {
+    const handleDelete = (index: number) => {
         setList(prevList => {
             const temp = prevList.filter((_, itemI) => itemI !== index);
             return temp;
         });
     };
 
-    const handleStatusChange = index => {
+    const handleStatusChange = (index: number) => {
         setList(prevList => {
             const newList = [...prevList];
             newList[index].isCompleted = !newList[index].isCompleted;

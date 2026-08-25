@@ -1,13 +1,19 @@
 import CalendarComponent from "./components/CalendarComponent";
 import DialogComponent from "./components/DialogComponent";
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {View, Button} from 'react-native';
 import TodoList from "./components/TodoList";
 
+export type RootStackParamList = {
+    Home: undefined;
+    Calendar: undefined;
+    Dialog: undefined;
+    TodoList: undefined;
+};
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
     return (
@@ -22,7 +28,9 @@ export default function App() {
     );
 }
 
-export const HomeScreen = ({navigation}) => {
+type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
+
+export const HomeScreen = ({navigation}: HomeScreenProps) => {
     return (
         <View>
             {/* ボタンを押して画面遷移 */}
